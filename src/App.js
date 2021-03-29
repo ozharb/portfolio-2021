@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import photoMe from './images/photo-me.jpeg';
-import wekendLogo from './images/wekend-logo.png'
+import wekendLogo from './images/wekend-logo.png';
+import budgitzLogo from './images/budgitz-logo.png';
+import spacedRepLogo from './images/spacedrep-logo.png';
+import Budgitz from './Budgitz/Budgitz'
+import WEkend from './WEkend/WEkend'
+import SpacedRep from './SpacedRep/SpacedRep'
+
 // import PreloadImage from 'react-preload-image'
 import "./App.css";
 
@@ -11,12 +17,36 @@ function App() {
   const [moveSections, setOffsetYSections] = useState(0);
   const [moveLastP, setOffsetYLastP] = useState(0);
   const [moveProjectsHeader, setOffsetYProjectsHeader] = useState(0);
+  const [projectDisplay, setProjectDisplay] = useState('')
+
   const handleScroll = () => setOffsetY(window.pageYOffset);
   const handleSections = () => window.pageYOffset >= 720 ? setOffsetYSections(window.pageYOffset - 720) : setOffsetYSections(0);
   const handleScrollOpacity = () => setOpacity(window.pageYOffset);
   const handleName = () => window.pageYOffset >= 300 ? setOffsetYName(window.pageYOffset - 300) : setOffsetYName(0);
   const handleLastP = () => window.pageYOffset >= 1100 ? setOffsetYLastP(window.pageYOffset - 1100) : setOffsetYLastP(0);
-  const handleProjects = () => window.pageYOffset >= 1700 ? setOffsetYProjectsHeader(window.pageYOffset - 1700) : setOffsetYProjectsHeader(0);  
+
+
+  
+const handleProjectDisplay = (project) => {
+  setProjectDisplay(project)
+  
+}
+const useMediaQuery = (query) => {
+  const mediaMatch = window.matchMedia(query);
+  const [matches, setMatches] = useState(mediaMatch.matches);
+
+  useEffect(() => {
+    const handler = e => setMatches(e.matches);
+    mediaMatch.addListener(handler);
+    return () => mediaMatch.removeListener(handler);
+  });
+  return matches;
+};
+const isMobile = useMediaQuery('(max-width: 700px)');
+const handleProjects = () => isMobile
+  ? window.pageYOffset >= 1800 ? setOffsetYProjectsHeader(window.pageYOffset - 1800) : setOffsetYProjectsHeader(0)
+  : window.pageYOffset >= 1600 ? setOffsetYProjectsHeader(window.pageYOffset - 1600) : setOffsetYProjectsHeader(0)
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleSections);
@@ -53,6 +83,17 @@ function App() {
 
     return () => window.removeEventListener("scroll", handleProjects);
   }, []);
+  const displayProject = () => {
+    if(projectDisplay==='Budgitz'){
+    return <Budgitz />
+  } else if (projectDisplay==='Spaced-Repetition'){
+    return <SpacedRep />
+  } else if (projectDisplay==='Wekend'){
+    return <WEkend />
+  } else {
+    return <p className='pick-project'>Choose a project to learn more.</p>
+  }
+}
   const renderContent = () => (
     <>
 
@@ -133,13 +174,14 @@ function App() {
           </section>
         </article>
       </div>
-      <div className="box b4">
+      <div className="b4">
+
         <h2>
-         <p className='projects-one'style={{ transform: `translateY(10px) translateY(-${moveProjectsHeader * 0.5}px)
+         <p className='projects-one'style={{ transform: `translateY(10px) translateY(-${moveProjectsHeader * 0.4}px)
          translateX(-${moveProjectsHeader * 0.2}px)
          `,
         }}>P</p>
-        <p className='projects-two' style={{ transform: `translateY(-10px) translateY(${moveProjectsHeader * 0.2}px)
+        <p className='projects-two' style={{ transform: `translateY(-10px) translateY(${moveProjectsHeader * 0.1}px)
        translateX(${moveProjectsHeader * 0.2}px)
        `
       }}>r</p>
@@ -150,7 +192,7 @@ function App() {
         translateX(${moveProjectsHeader * 0.2}px)
         ` 
       }}>j</p>
-        <p className='projects-five'style={{ transform: `translateY(10px)translateY(-${moveProjectsHeader * 0.3}px)
+        <p className='projects-five'style={{ transform: `translateY(10px)translateY(-${moveProjectsHeader * 0.2}px)
         translateX(-${moveProjectsHeader * 0.2}px)
         ` 
         }} >e</p>
@@ -162,25 +204,46 @@ function App() {
         translateX(-${moveProjectsHeader * 0.2}px)
         ` 
         }}>t</p>
-        <p className='projects-eight'style={{ transform: `translateY(-10px)translateY(${moveProjectsHeader * 0.3}px)
+        <p className='projects-eight'style={{ transform: `translateY(-10px)translateY(${moveProjectsHeader * 0.2}px)
          translateX(${moveProjectsHeader * 0.2}px)` 
         }} >s</p>
         </h2>
+        <div className='logos'>
+          <div className = 'logo-button'>
+          <button onClick = {()=> handleProjectDisplay('Wekend')}>
         <img
           // style={{ transform: `translateY(-${moveSections * .7}px)` }}
-          src={wekendLogo} width="200"
+          src={wekendLogo} width="100"
           className="logo"
           alt="wekend app logo" />
-          <p>WEkend</p>
-        <p>
-          <b>1. Like the video.</b> Because it helps me and my channel
-        </p>
-        <p>
-          <b>2. Like the video.</b> To see more content like that!
-        </p>
-        <p>
-          <b>3. Follow the Github link.</b> And play with this code yourself!
-        </p>
+</button> 
+          <label>WEkend</label>
+          </div>
+          <div className = 'logo-button'>
+            <button onClick = {()=> handleProjectDisplay('Budgitz')}>
+          <img
+          // style={{ transform: `translateY(-${moveSections * .7}px)` }}
+          src={budgitzLogo} width="100"
+          className="logo"
+          alt="Budgits app logo" />
+          </button>
+          <label>Budgitz</label>
+          </div>
+          <div className = 'logo-button'>
+            <button onClick = {()=> handleProjectDisplay('Spaced-Repetition')}>
+          <img
+          // style={{ transform: `translateY(-${moveSections * .7}px)` }}
+          src={spacedRepLogo} width="100"
+          className="logo"
+          alt="spaced-repetition app logo" />
+          </button>
+          <label>Spaced-Repetition</label>
+          </div>
+          </div>
+          <article className='project-content-window'>
+       {displayProject()}
+       </article>
+    
       </div>
       <div className="box b5">
         <h2>Box 5</h2>
