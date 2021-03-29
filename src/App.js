@@ -45,7 +45,7 @@ useEffect(()=>{
           <p style={{ transform: `translateY(${offsetY * 0.3}px)` }}>l</p>
           <p style={{ transform: `translateY(${offsetY * 0.5}px)` }} >o</p>
         </h1>
-
+<section className= 'box-one'>
       <div className="box b1">
         <span className="b1-content">
       <h2 
@@ -56,6 +56,7 @@ useEffect(()=>{
         </p>
         </span>
       </div>
+      </section>
       <div className="box b2">
         <p>
           About Me

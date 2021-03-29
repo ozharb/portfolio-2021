@@ -15,14 +15,32 @@
     background-size: cover; */
     background-image: linear-gradient(rgb(45, 202, 241),60%, rgb(255, 238, 88));
   }
+  .box-one {
+    padding-left: 50px;
+    margin-left: 25px;
+    margin-right: 8;
+    overflow: hidden;
+    width: 350px;
+    height: 400px;
+    text-align: center;
+}
   .box.b1 {
-    padding: 40px;
+    overflow: hidden;
+    padding: 40px 20px 0px 0px;
     height: 220px;
     width: 220px;
     transform: rotate(
 45deg
 );
 
+}
+span.b1-content {
+  transform: rotate(
+-45deg
+);
+  position: relative;
+  left: 4px;
+  bottom: 20px;
 }
 .box.b2{
 padding: 20px 0 20px 0;
@@ -36,14 +54,7 @@ padding: 20px 0 20px 0;
   position: sticky;
   top: 0;
 }
-  span.b1-content {
-    transform: rotate(
--45deg
-);
-    position: relative;
-    left: 4px;
-    bottom: 20px;
-}
+ 
   .images-background{
 
     background: gray;
