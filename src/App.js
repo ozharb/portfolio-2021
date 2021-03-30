@@ -17,6 +17,7 @@ function App() {
   const [moveSections, setOffsetYSections] = useState(0);
   const [moveLastP, setOffsetYLastP] = useState(0);
   const [moveProjectsHeader, setOffsetYProjectsHeader] = useState(0);
+  const [moveProjectsHeaderMobile, setOffsetYProjectsHeaderMobile] = useState(0);
   const [projectDisplay, setProjectDisplay] = useState('')
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
@@ -29,7 +30,7 @@ function App() {
   
 const handleProjectDisplay = (project) => {
   setProjectDisplay(project)
-  
+
 }
 const useMediaQuery = (query) => {
   const mediaMatch = window.matchMedia(query);
@@ -42,11 +43,12 @@ const useMediaQuery = (query) => {
   });
   return matches;
 };
-const isMobile = useMediaQuery('(max-width: 700px)');
-const handleProjects = () => isMobile
-  ? window.pageYOffset >= 1800 ? setOffsetYProjectsHeader(window.pageYOffset - 1800) : setOffsetYProjectsHeader(0)
-  : window.pageYOffset >= 1600 ? setOffsetYProjectsHeader(window.pageYOffset - 1600) : setOffsetYProjectsHeader(0)
 
+const isMobile = useMediaQuery('(max-width: 700px)');
+
+const handleProjects = () => window.pageYOffset >= 1600 ? setOffsetYProjectsHeader(window.pageYOffset - 1600) : setOffsetYProjectsHeader(0)
+
+const handleProjectsMobile = ()=>window.pageYOffset >= 1900 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 1900) : setOffsetYProjectsHeaderMobile(0)
 
   useEffect(() => {
     window.addEventListener("scroll", handleSections);
@@ -80,8 +82,11 @@ const handleProjects = () => isMobile
 
   useEffect(() => {
     window.addEventListener("scroll", handleProjects);
-
     return () => window.removeEventListener("scroll", handleProjects);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleProjectsMobile);
+    return () => window.removeEventListener("scroll", handleProjectsMobile);
   }, []);
   const displayProject = () => {
     if(projectDisplay==='Budgitz'){
@@ -177,35 +182,35 @@ const handleProjects = () => isMobile
       <div className="b4">
 
         <h2>
-         <p className='projects-one'style={{ transform: `translateY(10px) translateY(-${moveProjectsHeader * 0.4}px)
-         translateX(-${moveProjectsHeader * 0.2}px)
+         <p className='projects-one'style={{ transform: `translateY(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.4: moveProjectsHeader * 0.4}px)
+         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
          `,
         }}>P</p>
-        <p className='projects-two' style={{ transform: `translateY(-10px) translateY(${moveProjectsHeader * 0.1}px)
-       translateX(${moveProjectsHeader * 0.2}px)
+        <p className='projects-two' style={{ transform: `translateY(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
+       translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
        `
       }}>r</p>
-        <p className='projects-three'style={{ transform: `translateY(10px)translateY(-${moveProjectsHeader * 0.1}px)
-        translateX(-${moveProjectsHeader * 0.2}px)`
+        <p className='projects-three'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)`
          }}>o</p>
-        <p className='projects-four'style={{ transform: `translateY(-10px)translateY(${moveProjectsHeader * 0.2}px)
-        translateX(${moveProjectsHeader * 0.2}px)
+        <p className='projects-four'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
+        translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
         ` 
       }}>j</p>
-        <p className='projects-five'style={{ transform: `translateY(10px)translateY(-${moveProjectsHeader * 0.2}px)
-        translateX(-${moveProjectsHeader * 0.2}px)
+        <p className='projects-five'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile* 0.2 : moveProjectsHeader * 0.2}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
         ` 
         }} >e</p>
-        <p className='projects-six'style={{ transform: `translateY(-10px)translateY(${moveProjectsHeader * 0.1}px)
-         translateX(${moveProjectsHeader * 0.2}px)
+        <p className='projects-six'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
+         translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
          ` 
         }}>c</p>
-        <p className='projects-seven'style={{ transform: `translateY(10px)translateY(-${moveProjectsHeader * 0.2}px)
-        translateX(-${moveProjectsHeader * 0.2}px)
+        <p className='projects-seven'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile* 0.2 : moveProjectsHeader * 0.2}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
         ` 
         }}>t</p>
-        <p className='projects-eight'style={{ transform: `translateY(-10px)translateY(${moveProjectsHeader * 0.2}px)
-         translateX(${moveProjectsHeader * 0.2}px)` 
+        <p className='projects-eight'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
+         translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)` 
         }} >s</p>
         </h2>
         <div className='logos'>
