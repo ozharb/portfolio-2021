@@ -24,7 +24,7 @@ width: 350px;
 height: 400px;
 text-align: center;
 }
-.box.b1 {
+.b1 {
 background-color: rgba(252, 41, 76, 0.5);
 display: flex;
 flex-direction: column;
@@ -50,17 +50,20 @@ position: relative;
 left: 4px;
 bottom: 20px;
 }
-.box.b2{
-background-color: rgba(252, 41, 76, 0.5);
+
+.navbar>button{
+  font-family: 'Krona One', sans-serif;
+  color: white;
+}
+.b2{
+
+background-color: rgba(1, 159, 199, 0.5);
 display: flex;
 flex-direction: column;
-
 font-size: 20px;
 color: #fff;
-
 margin-top: 120px;
 z-index: 3;
-padding: 20px 0 20px 0;
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -70,6 +73,7 @@ backdrop-filter: blur(10px);
 position: -webkit-sticky;
 position: sticky;
 top: 0;
+padding: 15px;
 }
 
 .b3-left-right{
@@ -94,11 +98,13 @@ margin-right: auto;
 overflow: hidden;
 
 }
+
 .b3{
 background: none;
 display: flex;
 flex-direction: column;
 }
+
 .about-me-content-headers {
 padding-top: 40px;
 /* background-color: rgba(252, 41, 76, 0.5); */
@@ -118,19 +124,39 @@ margin-top: 100px;
 margin-left: 20px;
 margin-right: 10px;
 }
+.photo-circles{
+  margin: auto;
+}
 .photo-me{
+
 top: 160px;
 position: relative;
 z-index: 2;
 width: 300px;
 height: 300px;
-margin: auto;
+
 border-radius: 50%;
 
 }
-.b4>h2{
-
-
+.creative-circle-red{
+  bottom: 144px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-color: rgb(255, 0, 0, .5);
+  border-radius: 50%;
+}
+.creative-circle-blue{
+ bottom: 444px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-color: rgb(40, 141, 236, .5);
+  border-radius: 50%;
+}
+.projects-header{
 color: white;
 text-align: center;
 /* letter-spacing: .7em; */
@@ -139,6 +165,7 @@ display: flex;
 justify-content: center;
 }
 .b4{
+padding-top: 70px;
 overflow: hidden;
 width: 100%;
 }
@@ -160,7 +187,7 @@ background-color: mediumturquoise;
 box-shadow: 10px 10px 10px  rgb(54, 160, 156);
 }
 .projects-three{
-background-color: greenyellow;
+background-color: rgb(156, 231, 42);
 box-shadow: 10px 10px 10px  rgb(104, 153, 30);
 }
 .projects-four{
@@ -179,7 +206,7 @@ box-shadow: 10px 10px 10px  rgb(54, 160, 156);
 background-color: violet;
 }
 .projects-seven{
-background-color: greenyellow;
+background-color: rgb(156, 231, 42);
 box-shadow: 10px 10px 10px  rgb(104, 153, 30);
 }
 .projects-eight{
@@ -212,7 +239,6 @@ button:focus:not(:focus-visible) {
 button{
 padding-top: 10px;
 padding-bottom: 10px;
-
 width: 200px;
 background: none;
 border: none;
@@ -226,30 +252,60 @@ text-align: center;
 .logo{
 border-radius: 50%;
 box-shadow: 2px 2px 10px rgb(82, 81, 81);
-transition: box-shadow .3s;
+background: none;
+
+transition:  box-shadow .3s;
 }
 .logo:active{
 box-shadow: none;
+
 }
 .pick-project{
+margin-top: 40px;
 color: white;
 text-align: center;
 font-size: large;
 }
-.project-content-window{
+.main-app-content{
+  text-align: center;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+.projects-right{
+  width: 37%;
+  position: relative;
+  bottom: 20px;
+}
+
+/*--mini-phone-display for screenshot --*/
+.app-border{
 margin-top: 50px;
 border: solid black;
-
 border-width: 10px;
 border-radius: 20px;
-box-shadow: 10px 10px 10px rgb(46, 46, 46, .7);
+box-shadow:  0 0 15px rgb(46, 46, 46, .7) inset,0 0 0 5px hsl(0, 0%, 90%),10px 10px 10px rgb(46, 46, 46, .7);
 text-align: center;
 overflow-y: scroll;
-width:300px;
-height: 500px;
+width:310px;
+height: 470px;
 margin: auto;
-margin-bottom: 20px;
+margin-bottom: 5px;
 }
+.app-main{
+  text-align: center;
+  border-width: 10px;
+  border-radius: 20px;
+  background: rgb(255, 99, 71, .7);
+  box-shadow: 0px 0px 10px rgb(184, 69, 49) ;
+  text-align: center;
+  overflow-y: scroll;
+  width:350px;
+  height: 620px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  }
 .Parallax__background{
 /* width: 1080px;
 height: 1280px;
@@ -298,7 +354,7 @@ font-size: 60px;
 
 .heading-caption{
 margin: 0;
-font-size: 20px;
+font-size: 12px;
 }
 .circle-1{
 border-radius: 50%;
@@ -307,23 +363,228 @@ position: absolute;
 padding: 100px;
 background-image: linear-gradient(orange, pink);
 }
+/*--screenshots carousel--*/
+.slideshow-buttons-container{
+display: flex;
+justify-content: space-around;
+}
+.slideshow-button {
+  display: flex;
+  flex-direction: column;
+}
+i.fa.chevron-circle-right,i.fa.chevron-circle-left{
+  font-size: 40px;
+}
+.screenshot-caption{
+  font-size: 14px;
+}
+
+.captions-container{
+  text-align:center;
+margin: auto;
+  height: 45px;
+}
+
+/*--flip animation for project titles...--*/
+.app-one-flip{
+
+  margin-bottom: 20px;
+      background-color: none;
+
+height: 100px;
+      font-size: 20px;
+      color: #fff;
+      perspective: 1000px;
+      }
+      .app-one-inner{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+          }
+  
+          .app-one-flip:active .app-one-inner {
+              transform: rotateY(180deg);
+            }
+            .app-one-flip:hover .app-one-inner {
+              transform: rotateY(180deg);
+            }
+            .app-one-flip:focus .app-one-inner {
+              transform: rotateY(180deg);
+            }
+            .app-one-front, .app-one-back {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden; /* Safari */
+              backface-visibility: hidden;
+            }
+      
+            .app-one-front{
+              background-color: transparent;
+              color: white;
+              border-radius: 20px;
+            }
+      
+            .app-one-back {
+              background-color: transparent;
+              font-size: small;
+              color: white;
+              border-radius: 20px;
+              transform: rotateY(180deg);
+            }
+      .app-one-flip>p{
+      font-size: medium;
+
+      margin-left: 10px;
+      }
+      .app-icons{
+          display: flex;
+          justify-content: space-evenly;
+      }
+/*--information about app in projects section--*/
+      .app-one{
+          text-align: center;
+          margin: 10px;
+    font-size: 20px;
+    color: #fff;
+
+  
+      }
+      .app-one>h2{
+          font-size: 20px;
+         margin: auto;
+      }
+      .app-one>p{
+        margin-left: 10px;
+          margin-bottom: 5px;
+          font-size: 14px;
+  
+      }
+      .app-one>ul,li{
+          font-size: 12px;
+          text-align: start;
+      }
+      .logo-links{
+          display: flex;
+          justify-content: space-around;
+      }
+      .logo-link>a{
+          color: white;
+          text-decoration: none;
+          font-size: 14px;;
+      }
+   .fa-github-alt{
+       font-size: 30px;
+   }
+
+.contact{
+
+  margin-top: 100px;
+  margin-bottom: 40px;
+  background: rgb(255, 165, 0, .5);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgb(173, 113, 1);
+
+}
+.contact>h2{
+  text-align: center;
+  color:white;
+  letter-spacing: .3em;
+  font-size: 40px;
+}
+ul.contact-me-left{
+ list-style: none;
+}
+.contact-me-left>li{
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.contact-me-left>li>a{
+  color: black;
+  text-decoration: none;
+}
+.contact-me-left-right{
+  display: flex;
+  
+  }
+  .contact-icon{
+    font-size: 25px;
+    margin-right: 20px;
+  }
 @media screen and (max-width: 550px) {
+.main-app-content{
+  flex-direction: column;
+}
+.projects-right{
+  width: auto;
+}
 label{
   font-size: .7em;
+}
+.projects-header{
+  margin: 0;
 }
 .b4>h2>p{
 height: 40px;
 width: 40px;
 font-size: .7em;
+
 }
-.box.b2{
+.b2{
+padding: 20px 0 20px 0; 
 font-size: .7em;
 }
 .b3-left-right{
 font-size: .7em;
 left: 0;
 }
+
 button{
 width: 120px;
 }
+.contact>h2{
+
+  letter-spacing: .3em;
+  font-size: 15px;
+
+}
+.contact-me-img{
+  width: 200px;
+}
+.contact-me-left>li{
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.contact-icon{
+  font-size: 15px;
+  margin-right: 20px;
+}
+.contact-me-left-right{
+  display: flex;
+  flex-direction: column;
+  
+  }
+
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+button{
+  width: 100px;
+}
+    label{
+      font-size: .4em;
+    }
+  .box-one{
+    width: 315px;
+    margin-right: 15px;
+  }
+
 }

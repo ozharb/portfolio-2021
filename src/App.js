@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import photoMe from './images/photo-me.jpeg';
 import wekendLogo from './images/wekend-logo.png';
 import budgitzLogo from './images/budgitz-logo.png';
 import spacedRepLogo from './images/spacedrep-logo.png';
+import contactMe from './images/contact-me.png'
 import Budgitz from './Budgitz/Budgitz'
 import WEkend from './WEkend/WEkend'
 import SpacedRep from './SpacedRep/SpacedRep'
@@ -21,34 +23,34 @@ function App() {
   const [projectDisplay, setProjectDisplay] = useState('')
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
-  const handleSections = () => window.pageYOffset >= 720 ? setOffsetYSections(window.pageYOffset - 720) : setOffsetYSections(0);
+  const handleSections = () => window.pageYOffset >= 850 ? setOffsetYSections(window.pageYOffset - 850) : setOffsetYSections(0);
   const handleScrollOpacity = () => setOpacity(window.pageYOffset);
   const handleName = () => window.pageYOffset >= 300 ? setOffsetYName(window.pageYOffset - 300) : setOffsetYName(0);
   const handleLastP = () => window.pageYOffset >= 1100 ? setOffsetYLastP(window.pageYOffset - 1100) : setOffsetYLastP(0);
 
 
-  
-const handleProjectDisplay = (project) => {
-  setProjectDisplay(project)
 
-}
-const useMediaQuery = (query) => {
-  const mediaMatch = window.matchMedia(query);
-  const [matches, setMatches] = useState(mediaMatch.matches);
+  const handleProjectDisplay = (project) => {
+    setProjectDisplay(project)
 
-  useEffect(() => {
-    const handler = e => setMatches(e.matches);
-    mediaMatch.addListener(handler);
-    return () => mediaMatch.removeListener(handler);
-  });
-  return matches;
-};
+  }
+  const useMediaQuery = (query) => {
+    const mediaMatch = window.matchMedia(query);
+    const [matches, setMatches] = useState(mediaMatch.matches);
 
-const isMobile = useMediaQuery('(max-width: 700px)');
+    useEffect(() => {
+      const handler = e => setMatches(e.matches);
+      mediaMatch.addListener(handler);
+      return () => mediaMatch.removeListener(handler);
+    });
+    return matches;
+  };
 
-const handleProjects = () => window.pageYOffset >= 1600 ? setOffsetYProjectsHeader(window.pageYOffset - 1600) : setOffsetYProjectsHeader(0)
+  const isMobile = useMediaQuery('(max-width: 700px)');
 
-const handleProjectsMobile = ()=>window.pageYOffset >= 1900 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 1900) : setOffsetYProjectsHeaderMobile(0)
+  const handleProjects = () => window.pageYOffset >= 1400 ? setOffsetYProjectsHeader(window.pageYOffset - 1400) : setOffsetYProjectsHeader(0)
+
+  const handleProjectsMobile = () => window.pageYOffset >= 1650 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 1650) : setOffsetYProjectsHeaderMobile(0)
 
   useEffect(() => {
     window.addEventListener("scroll", handleSections);
@@ -88,17 +90,41 @@ const handleProjectsMobile = ()=>window.pageYOffset >= 1900 ? setOffsetYProjects
     window.addEventListener("scroll", handleProjectsMobile);
     return () => window.removeEventListener("scroll", handleProjectsMobile);
   }, []);
-  const displayProject = () => {
-    if(projectDisplay==='Budgitz'){
-    return <Budgitz />
-  } else if (projectDisplay==='Spaced-Repetition'){
-    return <SpacedRep />
-  } else if (projectDisplay==='Wekend'){
-    return <WEkend />
-  } else {
-    return <p className='pick-project'>Choose a project to learn more.</p>
+
+  //Nav Bar//
+  const aboutMe = React.createRef()
+  const projects = React.createRef()
+  const contact = React.createRef()
+
+  const scrollToAboutMe = () => {
+    aboutMe.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
   }
-}
+  const scrollToProjects = () => {
+    projects.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+  const scrollToContact = () => {
+    contact.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    })
+  }
+  const displayProject = () => {
+    if (projectDisplay === 'Budgitz') {
+      return <Budgitz />
+    } else if (projectDisplay === 'Spaced-Repetition') {
+      return <SpacedRep />
+    } else if (projectDisplay === 'Wekend') {
+      return <WEkend />
+    } else {
+      return <p className='pick-project'>Choose a project to learn more.</p>
+    }
+  }
   const renderContent = () => (
     <>
 
@@ -124,40 +150,57 @@ const handleProjectsMobile = ()=>window.pageYOffset >= 1900 ? setOffsetYProjects
           </span>
         </div>
       </section>
-      <div className="box b2">
-        <p>
+      <div className="b2 navbar">
+        < button onClick={() => scrollToAboutMe()}>
           About Me
-        </p>
-        <p>
+        </button>
+        <button onClick={() => scrollToProjects()}>
           Projects
-        </p>
-        <p>
+        </button>
+        <button onClick={() => scrollToContact()}>
           Contact
-        </p>
+        </button>
       </div>
 
-      <div className="box b3">
+      <div className="box b3 about-me" ref={aboutMe} >
+        <div className = 'photo-circles'>
+
+     
         <img
-          style={{ transform: `translateY(-${moveSections * .7}px)` }}
+          style={{ transform: `translateY(${moveSections * .95}px)`,
+          opacity: `${1- moveSections * .003}` }}
           src={photoMe} width="300"
           className="photo-me"
           alt="my face" />
+           <div
+          style={{ transform: `translateY(${moveSections * .95}px)`,
+          opacity: `${1- moveSections * .001}`}}
+        width="300"
+          className="creative-circle-red"
+      />
+         <div
+          style={{ transform: `translateY(${moveSections * .95}px)`}}
+        width="300"
+          className="creative-circle-blue"
+      />
+         </div>
+         
         <article className='about-me-content-headers'>
 
           <div className='b3-left-right'>
             <div className='b3-left'
               style={{
                 transform: `translateX(-${moveSections * .4}px)`,
-                opacity: `${moveSections * .003}`
+                opacity: `${1- moveSections * .001}`
               }}>
-              <p>Where I've been</p>
+              <p>Creative</p>
             </div>
             <div className='b3-right'
               style={{
                 transform: `translateX(${moveSections * .4}px)`,
-                opacity: `${moveSections * .003}`
+                opacity: `${1- moveSections * .001}`
               }}>
-              <p>Where I'm going</p>
+              <p>Developer</p>
             </div>
           </div>
           <section
@@ -179,100 +222,116 @@ const handleProjectsMobile = ()=>window.pageYOffset >= 1900 ? setOffsetYProjects
           </section>
         </article>
       </div>
-      <div className="b4">
+      <div className="b4" ref={projects} >
 
-        <h2>
-         <p className='projects-one'style={{ transform: `translateY(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.4: moveProjectsHeader * 0.4}px)
-         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-         `,
-        }}>P</p>
-        <p className='projects-two' style={{ transform: `translateY(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
-       translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-       `
-      }}>r</p>
-        <p className='projects-three'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
-        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)`
-         }}>o</p>
-        <p className='projects-four'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-        translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-        ` 
-      }}>j</p>
-        <p className='projects-five'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile* 0.2 : moveProjectsHeader * 0.2}px)
-        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-        ` 
-        }} >e</p>
-        <p className='projects-six'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.1: moveProjectsHeader * 0.1}px)
-         translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-         ` 
-        }}>c</p>
-        <p className='projects-seven'style={{ transform: `translateY(10px)translateY(-${isMobile ? moveProjectsHeaderMobile* 0.2 : moveProjectsHeader * 0.2}px)
-        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-        ` 
-        }}>t</p>
-        <p className='projects-eight'style={{ transform: `translateY(-10px)translateY(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)
-         translateX(${isMobile ? moveProjectsHeaderMobile * 0.2: moveProjectsHeader * 0.2}px)` 
-        }} >s</p>
+        <h2 className='projects-header'>
+
+          <p className='projects-one' style={{
+            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`,
+          }}>P</p>
+
+          <p className='projects-two' style={{
+            transform: `translateY(-10px) translateX(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+       translateX(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }}>r</p>
+
+          <p className='projects-three' style={{
+            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }}>o</p>
+
+          <p className='projects-four' style={{
+            transform: `translateY(-10px) translateX(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+        translateX(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }}>j</p>
+
+          <p className='projects-five' style={{
+            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }} >e</p>
+
+          <p className='projects-six' style={{
+            transform: `translateY(-10px) translateX(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+         translateX(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }}>c</p>
+
+          <p className='projects-seven' style={{
+            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+        translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }}>t</p>
+
+          <p className='projects-eight' style={{
+            transform: `translateY(-10px) translateX(-5px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+         translateX(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
+          }} >s</p>
+
         </h2>
         <div className='logos'>
-          <div className = 'logo-button'>
-          <button onClick = {()=> handleProjectDisplay('Wekend')}>
-        <img
-          // style={{ transform: `translateY(-${moveSections * .7}px)` }}
-          src={wekendLogo} width="100"
-          className="logo"
-          alt="wekend app logo" />
-</button> 
-          <label>WEkend</label>
+          <div className='logo-button'>
+            <button onClick={() => handleProjectDisplay('Wekend')}>
+              <img
+                src={wekendLogo} width="100"
+                className="logo"
+                alt="wekend app logo" />
+            </button>
+            <label>WEkend</label>
           </div>
-          <div className = 'logo-button'>
-            <button onClick = {()=> handleProjectDisplay('Budgitz')}>
-          <img
-          // style={{ transform: `translateY(-${moveSections * .7}px)` }}
-          src={budgitzLogo} width="100"
-          className="logo"
-          alt="Budgits app logo" />
-          </button>
-          <label>Budgitz</label>
+          <div className='logo-button'>
+            <button onClick={() => handleProjectDisplay('Budgitz')}>
+              <img
+                // style={{ transform: `translateY(-${moveSections * .7}px)` }}
+                src={budgitzLogo} width="100"
+                className="logo"
+                alt="Budgits app logo" />
+            </button>
+            <label>Budgitz</label>
           </div>
-          <div className = 'logo-button'>
-            <button onClick = {()=> handleProjectDisplay('Spaced-Repetition')}>
-          <img
-          // style={{ transform: `translateY(-${moveSections * .7}px)` }}
-          src={spacedRepLogo} width="100"
-          className="logo"
-          alt="spaced-repetition app logo" />
-          </button>
-          <label>Spaced-Repetition</label>
+          <div className='logo-button'>
+            <button onClick={() => handleProjectDisplay('Spaced-Repetition')}>
+              <img
+                // style={{ transform: `translateY(-${moveSections * .7}px)` }}
+                src={spacedRepLogo} width="100"
+                className="logo"
+                alt="spaced-repetition app logo" />
+            </button>
+            <label>Spaced-Repetition</label>
           </div>
-          </div>
-          <article className='project-content-window'>
-       {displayProject()}
-       </article>
-    
+        </div>
+        <article className='project-content-window'>
+          {displayProject()}
+        </article>
+
       </div>
-      <div className="box b5">
-        <h2>Box 5</h2>
-        <p>
-          <b>1. Like the video.</b> Because it helps me and my channel
-        </p>
-        <p>
-          <b>2. Like the video.</b> To see more content like that!
-        </p>
-        <p>
-          <b>3. Follow the Github link.</b> And play with this code yourself!
-        </p>
-      </div>
-      <div className="box b6">
-        <h2>Box 6</h2>
-        <p>
-          <b>1. Like the video.</b> Because it helps me and my channel
-        </p>
-        <p>
-          <b>2. Like the video.</b> To see more content like that!
-        </p>
-        <p>
-          <b>3. Follow the Github link.</b> And play with this code yourself!
-        </p>
+      <div className="b5 contact" ref={contact} >
+        <h2>Contact Me</h2>
+        <section className='contact-me-left-right'>
+          <ul className='contact-me-left'>
+        <li>
+        <i className="fas contact-icon fa-phone-alt"><FontAwesomeIcon className='phone-alt icon' icon='phone-alt' /></i>
+        206.962.1815
+        </li>
+        <li>
+        <i className="fas contact-icon fa-envelope"><FontAwesomeIcon className='envelope icon' icon='envelope' /></i>
+        ozharb@gmail.com
+        </li>
+        <li><a href='https://www.linkedin.com/in/osman-harb/' rel="noreferrer" target="_blank">
+        <i className="fab contact-icon fa-linkedin"><FontAwesomeIcon icon={["fab", "linkedin"]} /></i>
+        linkedin.com/osmanharb
+        </a>
+        </li>
+        <li>
+          <a href='https://github.com/ozharb/' rel="noreferrer" target="_blank">
+        <i className="fab contact-icon fa-github-square"><FontAwesomeIcon icon={["fab", "github-square"]} /></i>
+        github.com/ozharb/
+        </a>
+        </li>
+        </ul>
+        <div className='contact-me-right'>
+          <img className = 'contact-me-img' src={contactMe} width='300' alt='cartoon winky face'/>
+        </div>
+        </section>
+
       </div>
     </>
   );

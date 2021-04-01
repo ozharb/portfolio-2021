@@ -1,23 +1,5 @@
-.app-main{
-background-color: none;
-padding-top: 20px;
-padding-bottom: 20px;
-
-text-align: center;
+.budgitz-main{
+background-color: black;
 }
 
-.app-one{
-margin: 10px;
-background-color: rgba(252, 41, 76, 0.5);
-font-size: 20px;
-color: #fff;
-border-radius: 50px;
-padding: 40px ;
 
-}
-
-.app-one>p{
-font-size: medium;
-margin: auto;
-margin-left: 10px;
-}
