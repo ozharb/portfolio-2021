@@ -560,7 +560,7 @@ ul.contact-me-left{
   background-size: 153px;
   background-position-y: 0px;
   background-position-x: -19px;
-top: 1450px;
+top: 1250px;
 width: 100px;
 height: 100px;
 }
@@ -590,6 +590,11 @@ left: 0;
 
 button{
 width: 120px;
+}
+.logo{
+  width: 80px;
+  position: relative;
+  right: 3px;
 }
 .contact>h2{
 
