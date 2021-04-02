@@ -9,7 +9,6 @@ import Budgitz from './Budgitz/Budgitz'
 import WEkend from './WEkend/WEkend'
 import SpacedRep from './SpacedRep/SpacedRep'
 
-// import PreloadImage from 'react-preload-image'
 import "./App.css";
 
 function App() {
@@ -313,7 +312,7 @@ function App() {
             </li>
           </ul>
           <div className='contact-me-right'>
-            <img className='contact-me-img' src={contactMe} width='300' alt='cartoon winky face' />
+            <img className='contact-me-img' src={contactMe} width='120' alt='cartoon winky face' />
           </div>
         </section>
 

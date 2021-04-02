@@ -50,8 +50,8 @@ bottom: 20px;
 }
 
 .navbar>button{
-  font-family: 'Krona One', sans-serif;
-  color: white;
+font-family: 'Krona One', sans-serif;
+color: white;
 }
 .b2{
 
@@ -106,7 +106,7 @@ padding-bottom: 280px;
 }
 
 .about-me-content-container{
-  margin-top: 80px;
+margin-top: 80px;
 /* background-color: rgba(252, 41, 76, 0.5); */
 display: flex;
 flex-direction: column;
@@ -122,11 +122,11 @@ margin-left: 20px;
 margin-right: 20px;
 }
 .about-me-content>p{
-  margin-bottom: 2em;
+margin-bottom: 2em;
 }
 .photo-circles{
-  margin-left: 20px;
-  margin-right: 20px;
+margin-left: 20px;
+margin-right: 20px;
 }
 .photo-me{
 
@@ -140,36 +140,36 @@ border-radius: 50%;
 
 }
 .creative-circle-red{
-  top: 200px;
-  background-image: url('./images/books.jpeg');
-  /*- photo by Greg Rakozy-*/
-  background-size: 350px;
-  background-size: 365px;
-  background-position-y: 22px;
-  background-position-x: -60px;
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  background-color: rgb(255, 0, 0, .5);
-  border-radius: 50%;
+top: 200px;
+background-image: url('./images/books.jpeg');
+/*- photo by Greg Rakozy-*/
+background-size: 350px;
+background-size: 365px;
+background-position-y: 22px;
+background-position-x: -60px;
+position: relative;
+width: 300px;
+height: 300px;
+margin: auto;
+background-color: rgb(255, 0, 0, .5);
+border-radius: 50%;
 }
 .creative-circle-blue{
 
- top: 240px;
-  position: relative;
+top: 240px;
+position: relative;
 
-  width: 300px;
-  height: 300px;
-  background-image: url('./images/mission-control.jpeg');
-  /*-photo by Sieuwert Otterloo-*/
-  background-size: 350px;
-  background-size: 395px;
-  background-position-y: 30px;
-  background-position-x: -65px;
-  margin: auto;
-  background-color: rgb(40, 141, 236, .5);
-  border-radius: 50%;
+width: 300px;
+height: 300px;
+background-image: url('./images/mission-control.jpeg');
+/*-photo by Sieuwert Otterloo-*/
+background-size: 350px;
+background-size: 395px;
+background-position-y: 30px;
+background-position-x: -65px;
+margin: auto;
+background-color: rgb(40, 141, 236, .5);
+border-radius: 50%;
 }
 .projects-header{
 color: white;
@@ -247,7 +247,7 @@ flex-direction: column;
 justify-content: space-between;
 }
 button:focus:not(:focus-visible) {
-  outline: none;
+outline: none;
 }
 button{
 padding-top: 10px;
@@ -280,15 +280,15 @@ text-align: center;
 font-size: large;
 }
 .main-app-content{
-  text-align: center;
-  padding-top: 40px;
-  display: flex;
-  justify-content: space-around;
+text-align: center;
+padding-top: 40px;
+display: flex;
+justify-content: space-around;
 }
 .projects-right{
-  width: 37%;
-  position: relative;
-  bottom: 20px;
+width: 37%;
+position: relative;
+bottom: 20px;
 }
 
 /*--mini-phone-display for screenshot --*/
@@ -306,19 +306,19 @@ margin: auto;
 margin-bottom: 5px;
 }
 .app-main{
-  text-align: center;
-  border-width: 10px;
-  border-radius: 20px;
-  background: rgb(255, 99, 71, .7);
-  box-shadow: 0px 0px 10px rgb(184, 69, 49) ;
-  text-align: center;
-  overflow-y: scroll;
-  width:350px;
-  height: 620px;
-  margin-left:auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  }
+text-align: center;
+border-width: 10px;
+border-radius: 20px;
+background: rgb(255, 99, 71, .7);
+box-shadow: 0px 0px 10px rgb(184, 69, 49) ;
+text-align: center;
+overflow-y: scroll;
+width:350px;
+height: 620px;
+margin-left:auto;
+margin-right: auto;
+margin-bottom: 20px;
+}
 .Parallax__background{
 /* width: 1080px;
 height: 1280px;
@@ -382,273 +382,282 @@ display: flex;
 justify-content: space-around;
 }
 .slideshow-button {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 i.fa.chevron-circle-right,i.fa.chevron-circle-left{
-  font-size: 40px;
+font-size: 40px;
 }
 .screenshot-caption{
-  font-size: 14px;
+font-size: 14px;
 }
 
 .captions-container{
-  text-align:center;
+text-align:center;
 margin: auto;
-  height: 45px;
+height: 45px;
 }
 
 /*--flip animation for project titles...--*/
 .app-one-flip{
 
-  margin-bottom: 20px;
-      background-color: none;
+margin-bottom: 20px;
+  background-color: none;
 
 height: 100px;
-      font-size: 20px;
-      color: #fff;
-      perspective: 1000px;
+  font-size: 20px;
+  color: #fff;
+  perspective: 1000px;
+  }
+  .app-one-inner{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
       }
-      .app-one-inner{
-          position: relative;
+
+      .app-one-flip:active .app-one-inner {
+          transform: rotateY(180deg);
+        }
+        .app-one-flip:hover .app-one-inner {
+          transform: rotateY(180deg);
+        }
+        .app-one-flip:focus .app-one-inner {
+          transform: rotateY(180deg);
+        }
+        .app-one-front, .app-one-back {
+          position: absolute;
           width: 100%;
           height: 100%;
-          text-align: center;
-          transition: transform 0.8s;
-          transform-style: preserve-3d;
-          }
-  
-          .app-one-flip:active .app-one-inner {
-              transform: rotateY(180deg);
-            }
-            .app-one-flip:hover .app-one-inner {
-              transform: rotateY(180deg);
-            }
-            .app-one-flip:focus .app-one-inner {
-              transform: rotateY(180deg);
-            }
-            .app-one-front, .app-one-back {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              -webkit-backface-visibility: hidden; /* Safari */
-              backface-visibility: hidden;
-            }
-    
-            .app-one-front{
-              background-color: transparent;
-              color: white;
-              border-radius: 20px;
-            }
-      
-            .app-one-back {
-              background-color: transparent;
-              font-size: small;
-              color: white;
-              border-radius: 20px;
-              transform: rotateY(180deg);
-              position: relative;
-              top: 40px;
+          -webkit-backface-visibility: hidden; /* Safari */
+          backface-visibility: hidden;
+        }
 
-            }
-      .app-one-flip>p{
-      font-size: medium;
-
-      margin-left: 10px;
-      }
-      .app-icons{
-          display: flex;
-          justify-content: space-evenly;
-      }
-/*--information about app in projects section--*/
-      .app-one{
-          text-align: center;
-          margin: 10px;
-    font-size: 20px;
-    color: #fff;
-
-  
-      }
-      .app-one>h2{
-          font-size: 20px;
-        margin-top: 20px;
-      }
-      .app-one>p{
-        margin-left: 10px;
-          margin-bottom: 5px;
-          font-size: 14px;
-  
-      }
-      .app-one>ul,li{
-          font-size: 12px;
-          text-align: start;
-      }
-      .logo-links{
-          display: flex;
-          justify-content: space-around;
-      }
-      .logo-link>a{
+        .app-one-front{
+          background-color: transparent;
           color: white;
-          text-decoration: none;
-          font-size: 14px;;
-      }
-   .fa-github-alt{
-       font-size: 30px;
-   }
+          border-radius: 20px;
+        }
+  
+        .app-one-back {
+          background-color: transparent;
+          font-size: small;
+          color: white;
+          border-radius: 20px;
+          transform: rotateY(180deg);
+          position: relative;
+          top: 40px;
+
+        }
+  .app-one-flip>p{
+  font-size: medium;
+
+  margin-left: 10px;
+  }
+  .app-icons{
+      display: flex;
+      justify-content: space-evenly;
+  }
+/*--information about app in projects section--*/
+  .app-one{
+      text-align: center;
+      margin: 10px;
+font-size: 20px;
+color: #fff;
+
+
+  }
+  .app-one>h2{
+      font-size: 20px;
+    margin-top: 20px;
+  }
+  .app-one>p{
+    margin-left: 10px;
+      margin-bottom: 5px;
+      font-size: 14px;
+
+  }
+  .app-one>ul,li{
+      font-size: 12px;
+      text-align: start;
+  }
+  .logo-links{
+      display: flex;
+      justify-content: space-around;
+  }
+  .logo-link>a{
+      color: white;
+      text-decoration: none;
+      font-size: 14px;;
+  }
+.fa-github-alt{
+    font-size: 30px;
+}
 
 .contact{
-
-  margin-top: 100px;
-  margin-bottom: 40px;
-  background: rgb(255, 165, 0, .5);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 5px 5px 5px rgb(173, 113, 1);
+margin-top: 100px;
+margin-bottom: 40px;
+background: rgb(255, 165, 0, .5);
+padding: 20px;
+border-radius: 20px;
+box-shadow: 5px 5px 5px rgb(173, 113, 1);
 
 }
 .contact>h2{
-  text-align: center;
-  color:white;
-  letter-spacing: .3em;
-  font-size: 40px;
+text-align: center;
+color:white;
+letter-spacing: .3em;
+font-size: 40px;
 }
 ul.contact-me-left{
- list-style: none;
+list-style: none;
 }
 .contact-me-left>li{
-  margin-bottom: 20px;
-  font-size: 15px;
+margin-bottom: 20px;
+font-size: 15px;
 }
 .contact-me-left>li>a{
-  color: black;
-  text-decoration: none;
+color: black;
+text-decoration: none;
 }
 .contact-me-left-right{
-  display: flex;
-  
-  }
-  .contact-icon{
-    font-size: 25px;
-    margin-right: 20px;
-  }
-@media screen and (max-width: 550px) {
-.main-app-content{
-  flex-direction: column;
+display: flex;
+
 }
-.about-me-content{
+.contact-me-img{
+margin-top: 50px;;
+margin-left: 40px;
+}
+.contact-icon{
+font-size: 25px;
+margin-right: 20px;
+}
+@media screen and (max-width: 550px) {
+  .main-app-content{
+  flex-direction: column;
+  }
+  .about-me-content{
   height:120%;
   margin-bottom: 250px;
-}
-.app-main{
+  }
+  .app-main{
   width:310px;
-}
-.photo-me{
+  }
+  .photo-me{
   top: 200px;
   bottom: 0px;
   width: 100px;
   height: 100px;
-}
-.creative-circle-red{
+  }
+  .creative-circle-red{
   background-size: 153px;
   background-position-y: 0px;
   background-position-x: -19px;
   top: 700px;
   width: 100px;
   height: 100px;
-}
-.creative-circle-blue{
+  }
+  .creative-circle-blue{
   background-size: 153px;
   background-position-y: 0px;
   background-position-x: -19px;
-top: 1250px;
-width: 100px;
-height: 100px;
-}
-.projects-right{
+  top: 1250px;
+  width: 100px;
+  height: 100px;
+  }
+  .projects-right{
   width: auto;
-}
-label{
+  }
+  label{
   font-size: .7em;
-}
-.projects-header{
+  }
+  .projects-header{
   margin: 0;
-}
-.b4>h2>p{
-height: 40px;
-width: 40px;
-font-size: .7em;
+  }
+  .b4>h2>p{
+  height: 40px;
+  width: 40px;
+  font-size: .7em;
 
-}
-.b2{
-padding: 20px 0 20px 0; 
-font-size: .7em;
-}
-.b3-left-right{
-font-size: .7em;
-left: 0;
-}
+  }
+  .b2{
+  padding: 20px 0 20px 0; 
+  font-size: .7em;
+  }
+  .b3-left-right{
+  font-size: .7em;
+  left: 0;
+  }
 
-button{
-width: 120px;
-}
-.logo{
+  button{
+  width: 120px;
+  }
+  .logo{
   width: 80px;
   position: relative;
   right: 3px;
-}
-.contact>h2{
+  }
+  .contact>h2{
 
   letter-spacing: .3em;
   font-size: 15px;
 
-}
-.contact-me-img{
-  width: 200px;
-}
-.contact-me-left>li{
+  }
+  .contact-me-img{
+
+  width: 100px;
+  }
+  .contact-me-left>li{
+
   margin-bottom: 20px;
   font-size: 12px;
-}
-.contact-icon{
+
+  }
+  .contact-icon{
   font-size: 15px;
   margin-right: 20px;
-}
-.contact-me-left-right{
+  }
+  .contact-me-left-right{
   display: flex;
   flex-direction: column;
-  
+
+  }
+  .contact-me-right{
+  text-align: center;
   }
 
 }
 
 @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-    .about-me-content{
-      height:140%;
-      margin-bottom: 400px;
-    }
-button{
+and (min-device-width: 320px) 
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .about-me-content{
+    height:140%;
+    margin-bottom: 400px;
+  }
+  button{
   width: 100px;
-}
-    label{
-      font-size: .4em;
-    }
+  }
+  label{
+    font-size: .4em;
+  }
   .box-one{
-    width: 315px;
-    margin-right: 15px;
+  width: 315px;
+  margin-right: 15px;
   }
   .projects-header{
-    width: 41%;
-    height: 98px;
-    margin: auto;
-    background-color: rgb(235, 225, 91);
-    box-shadow: 5px 5px 4px rgb(151, 145, 58);
+  width: 41%;
+  height: 98px;
+  margin: auto;
+  background-color: rgb(235, 225, 91);
+  box-shadow: 5px 5px 4px rgb(151, 145, 58);
   }
   .projects-header>p{
-    display: contents;
+  display: contents;
   }
-  
-  }
+
+}
