@@ -142,7 +142,7 @@ border-radius: 50%;
 .creative-circle-red{
 top: 200px;
 background-image: url('./images/books.jpeg');
-/*- photo by Greg Rakozy-*/
+/*- photo by Greg Rakozy https://unsplash.com/@grakozy-*/
 background-size: 350px;
 background-size: 365px;
 background-position-y: 22px;
@@ -162,7 +162,7 @@ position: relative;
 width: 300px;
 height: 300px;
 background-image: url('./images/mission-control.jpeg');
-/*-photo by Sieuwert Otterloo-*/
+/*-photo by Sieuwert Otterloo https://unsplash.com/ -*/
 background-size: 350px;
 background-size: 395px;
 background-position-y: 30px;
@@ -409,48 +409,48 @@ height: 100px;
   color: #fff;
   perspective: 1000px;
   }
-  .app-one-inner{
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-      }
+.app-one-inner{
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
 
-      .app-one-flip:active .app-one-inner {
-          transform: rotateY(180deg);
-        }
-        .app-one-flip:hover .app-one-inner {
-          transform: rotateY(180deg);
-        }
-        .app-one-flip:focus .app-one-inner {
-          transform: rotateY(180deg);
-        }
-        .app-one-front, .app-one-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          -webkit-backface-visibility: hidden; /* Safari */
-          backface-visibility: hidden;
-        }
+.app-one-flip:active .app-one-inner {
+transform: rotateY(180deg);
+}
+.app-one-flip:hover .app-one-inner {
+transform: rotateY(180deg);
+}
+.app-one-flip:focus .app-one-inner {
+transform: rotateY(180deg);
+}
+.app-one-front, .app-one-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden; /* Safari */
+backface-visibility: hidden;
+}
 
-        .app-one-front{
-          background-color: transparent;
-          color: white;
-          border-radius: 20px;
-        }
-  
-        .app-one-back {
-          background-color: transparent;
-          font-size: small;
-          color: white;
-          border-radius: 20px;
-          transform: rotateY(180deg);
-          position: relative;
-          top: 40px;
+.app-one-front{
+background-color: transparent;
+color: white;
+border-radius: 20px;
+}
 
-        }
+.app-one-back {
+background-color: transparent;
+font-size: small;
+color: white;
+border-radius: 20px;
+transform: rotateY(180deg);
+position: relative;
+top: 40px;
+
+}
   .app-one-flip>p{
   font-size: medium;
 
@@ -461,22 +461,22 @@ height: 100px;
       justify-content: space-evenly;
   }
 /*--information about app in projects section--*/
-  .app-one{
-      text-align: center;
-      margin: 10px;
+.app-one{
+text-align: center;
+margin: 10px;
 font-size: 20px;
 color: #fff;
 
 
-  }
-  .app-one>h2{
-      font-size: 20px;
-    margin-top: 20px;
-  }
-  .app-one>p{
-    margin-left: 10px;
-      margin-bottom: 5px;
-      font-size: 14px;
+}
+.app-one>h2{
+font-size: 20px;
+margin-top: 20px;
+}
+.app-one>p{
+margin-left: 10px;
+margin-bottom: 5px;
+font-size: 14px;
 
   }
   .app-one>ul,li{
@@ -555,7 +555,7 @@ margin-right: 20px;
   background-size: 153px;
   background-position-y: 0px;
   background-position-x: -19px;
-  top: 700px;
+  top: 650px;
   width: 100px;
   height: 100px;
   }
