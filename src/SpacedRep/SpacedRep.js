@@ -33,7 +33,7 @@ const displayScreenshotCaption = (screenshot) => {
                         </div>
                     
                         <div className="app-one-back">
-                            <p>Named after the learning teqchnique</p>
+                            <p>Named after the learning technique</p>
                         </div>
                     </div>
                    
@@ -43,19 +43,22 @@ const displayScreenshotCaption = (screenshot) => {
                             <p>Language Learning</p>
                             <div className='app-icons'>
                                 <i className="fas fa-user"><FontAwesomeIcon className='user icon' icon='user' /></i>
-                                <i className="fas dollar-sign"><FontAwesomeIcon className='dollar-sign icon' icon='dollar-sign' /></i>
+                                <i className="fas brain"><FontAwesomeIcon className='brain icon' icon='brain' /></i>
                             </div>
                 </article>
             
                 <article className="app-one">
                     <h2>Description</h2>
-                    <p>A financial planning app where users can create mini budgets to caclulate personal expenses.</p>
+                    <p>A language learning app for practicing translations for a given set of words.</p>
                 </article>
                 <article className="app-one">
-                    <h2> Inspiration</h2>
-                    <p >My favorite part of online shopping is adding things to my cart.</p>
-                    <p>Online shopping carts are always the best way to calculate costs but they're not great at dynamic planning or staying organized.</p>
-                    <p>I wanted this app to build on what I like about online shopping with the added bonus of personal organization.</p>
+                    <h2>Project Highlights</h2>
+                    <p>This project was started with an existing codebase for the front and backend along with tests not yet passing.</p>
+                    <p>The spaced-repeition learning technique is implemented using an algorithm and a linked list data structure.</p>
+                    <p>The algorithm orders words with more incorrect guesses ahead of words with less incorrect answers. This forces the user to practice words they are struggling more often than other words.</p>
+                    <p>In addition to using an algorithm to implement the learning technique, the app also uses a linked list to store and order the data.</p>
+                    <p>Correct guesses force words to get pushed back in the linked list further than words with incorrect guesses.</p>
+                    <p>I enjoyed working with a linked list for this project which I found to be perefct for this type of data.</p>
                 </article>
                 <article className="app-one">
                     <h2>Tech</h2>
@@ -63,7 +66,7 @@ const displayScreenshotCaption = (screenshot) => {
                     <li>Reactjs</li>
                     <li>HTML5</li>
                     <li>CSS3 (vanilla)</li>
-                    <li>Testing with Jest</li>
+                    <li>Testing with Cypress</li>
                     <li>Deployed via Vercel</li>
                     <ul>Back End</ul>
                     <li>Node and Express</li>
@@ -89,14 +92,14 @@ const displayScreenshotCaption = (screenshot) => {
 
 
                         <div className='logo-link'>
-                            <a href='https://github.com/ozharb/BudGitz-client' rel="noreferrer" target="_blank">
+                            <a href='https://github.com/ozharb/spaced-repetition' rel="noreferrer" target="_blank">
                                 <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                 <br />
 github</a>
                         </div>
                         <div className='logo-link'>
-                            <a href='https://budgitz-client-ozharb.vercel.app/' rel="noreferrer" target="_blank">
-                                <img src={spacedRepLogo} width="35" alt='wekend app logo' />
+                            <a href='https://spaced-repetition-ozharb.vercel.app/' rel="noreferrer" target="_blank">
+                                <img src={spacedRepLogo} width="35" alt='spaced-repetition app logo' />
                                 <br />
 live app</a>
                         </div>

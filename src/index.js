@@ -4,6 +4,7 @@ import App from './App';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {
+  faBrain,
   faChevronCircleLeft,
   faChevronCircleRight,
   faPhoneAlt,
@@ -19,6 +20,7 @@ faGithubSquare,
 
 } from '@fortawesome/free-brands-svg-icons'
 library.add(fab,
+faBrain,
   faGithubSquare,
   faLinkedin,
   faEnvelope,

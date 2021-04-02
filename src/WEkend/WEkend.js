@@ -40,14 +40,14 @@ const displayScreenshotCaption = (screenshot) => {
                 <p >Full Stack App</p>
                             <p>Social Planning</p>
                             <div className='app-icons'>
-                                <i className="fas fa-user"><FontAwesomeIcon className='user icon' icon='user' /></i>
-                                <i className="fas dollar-sign"><FontAwesomeIcon className='dollar-sign icon' icon='dollar-sign' /></i>
+                                <i className="fas fa-users"><FontAwesomeIcon className='user icon' icon='users' /></i>
+                                <i className="fas calendar-alt"><FontAwesomeIcon className='calendar-alt icon' icon='calendar-alt' /></i>
                             </div>
                 </article>
             
                 <article className="app-one">
                     <h2>Description</h2>
-                    <p>A social event planning app where users can post events for friends to see as well as see and rsvp events their friends have posted .</p>
+                    <p>A social event planning app where users can post events for friends to see as well as see and rsvp events their friends have posted.</p>
                 </article>
                 <article className="app-one">
                     <h2> Inspiration</h2>

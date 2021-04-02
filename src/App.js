@@ -23,7 +23,7 @@ function App() {
   const [projectDisplay, setProjectDisplay] = useState('')
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
-  const handleSections = () => window.pageYOffset >= 750 ? setOffsetYSections(window.pageYOffset - 750) : setOffsetYSections(0);
+  const handleSections = () => window.pageYOffset >= 900 ? setOffsetYSections(window.pageYOffset - 900) : setOffsetYSections(0);
   const handleScrollOpacity = () => setOpacity(window.pageYOffset);
   const handleName = () => window.pageYOffset >= 300 ? setOffsetYName(window.pageYOffset - 300) : setOffsetYName(0);
   const handleLastP = () => window.pageYOffset >= 1100 ? setOffsetYLastP(window.pageYOffset - 1100) : setOffsetYLastP(0);
@@ -48,9 +48,9 @@ function App() {
 
   const isMobile = useMediaQuery('(max-width: 700px)');
 
-  const handleProjects = () => window.pageYOffset >= 1400 ? setOffsetYProjectsHeader(window.pageYOffset - 1400) : setOffsetYProjectsHeader(0)
+  const handleProjects = () => window.pageYOffset >= 1700 ? setOffsetYProjectsHeader(window.pageYOffset - 1700) : setOffsetYProjectsHeader(0)
 
-  const handleProjectsMobile = () => window.pageYOffset >= 2250 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 2250) : setOffsetYProjectsHeaderMobile(0)
+  const handleProjectsMobile = () => window.pageYOffset >= 2850 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 2850) : setOffsetYProjectsHeaderMobile(0)
 
   useEffect(() => {
     window.addEventListener("scroll", handleSections);
@@ -125,12 +125,12 @@ function App() {
       return <p className='pick-project'>Choose a project to learn more.</p>
     }
   }
+
   const renderContent = () => (
     <>
 
       <h1 className="header"
         style={{ opacity: `${1 - fade * .005}` }}
-      // style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
       >
         <p style={{ transform: `translateY(-${offsetY * 0.5}px)` }}>H</p>
         <p style={{ transform: `translateY(-${offsetY * 0.2}px)` }}>e</p>
@@ -163,68 +163,55 @@ function App() {
       </div>
 
       <div className="box b3 about-me" ref={aboutMe} >
-        <div className = 'photo-circles'>
+        <div className='photo-circles'>
 
-     
-        <img
-          style={{ transform: ` translateY(-${moveSections * .5}px)`,
-          opacity: `${1- moveSections * .003}` }}
-          src={photoMe} width="300"
-          className="photo-me"
-          alt="my face" />
-           <div
-          style={{ transform: `translateY(-${isMobile? moveSections * .02 : moveSections * .5}px)`,
-          opacity: `${(1- moveSections * .001)}`}}
-        width="300"
-          className="creative-circle-red"
-      />
-         <div
-          style={{ transform: `translateY(-${isMobile? moveSections * .02 : moveSections * .3}px)`}}
-        width="300"
-          className="creative-circle-blue"
-      />
-         </div>
-         
-        <article className='about-me-content-headers'>
 
-          {/* <div className='b3-left-right'>
-            <div className='b3-left'
-              style={{
-                transform: `translateX(-${moveSections * .4}px)`,
-                opacity: `${1- moveSections * .001}`
-              }}>
-              <p>Creative</p>
-            </div>
-            <div className='b3-right'
-              style={{
-                transform: `translateX(${moveSections * .4}px)`,
-                opacity: `${1- moveSections * .001}`
-              }}>
-              <p>Developer</p>
-            </div>
-          </div> */}
+          <img
+            style={{
+              transform: `translateY(-${isMobile ? moveSections * .002 : moveSections * .6}px)`,
+              opacity: `${1 - moveSections * .003}`
+            }}
+            src={photoMe} width="300"
+            className="photo-me"
+            alt="my face" />
+          <div
+            style={{
+              transform: `translateY(-${isMobile ? moveSections * .002 : moveSections * .5}px)`,
+              opacity: `${(isMobile ? 2.5 - moveSections * .002 : 1.5- moveSections * .002 )}`
+            }}
+            width="300"
+            className="creative-circle-red"
+          />
+          <div
+            style={{ transform: `translateY(-${isMobile ? moveSections * .001 : moveSections * .4}px)`,
+            opacity: `${(isMobile ? 5.5- moveSections * .003: 2- moveSections * .002)}`
+          }}
+            width="300"
+            className="creative-circle-blue"
+          />
+        </div>
+
+        <article className='about-me-content-container'>
+
           <section
             className='about-me-content'
             style={{ transform: `translateY(${moveSections * .15}px)` }}
           >
-            <p>
-              Born and raised in Seattle...
-        </p>
-            <p>
-              I studied biology and art at Seattle University then jumped into the world of immigration law to help families like mine make a home here.
-        </p>
+            <p> Born and raised in Seattle... </p>
+            <p>I studied biology and art at Seattle University then jumped into the world of immigration law to help families like mine make a home here.</p>
             <p>As a paralegal, I got to help Software Engineers and other professionals in the tech industry get their green cards giving me a unique perspective on the technology and talent it takes to create great software.</p>
-            <p>The years I spent learning about software peeked my interst in learning code and building my own projects.</p>
-            <p>Getting a Software Enginnering certificate at Thinkful verified my ability in, and passion for, coding and developing software that helps people and makes the world better.</p>
+            <p>The years I spent learning about software peeked my interest in learning how to code and build my own projects.</p>
+            <p>Getting a Software Enginnering certificate at Thinkful not only gave me the skills I need to be a strong developer but also solidified my passion in building great software for people.</p>
+            <p>I'm excited about continuing my journey in the field of software and web development and boldly going where I've never gone before.</p>
             <p
-              style={{ transform: `translateY(${isMobile? moveLastP * .05 : moveLastP * .25}px)` }}
+              style={{ transform: `translateY(${isMobile ? moveLastP * .05 : moveLastP * .15}px)` }}
             >Don't hesitate to reach out so we can get to work. I can't wait to team up with people and build some cool stuff.</p>
           </section>
         </article>
       </div>
       <div className="b4" ref={projects} >
 
-        <h2 className='projects-header'>
+        <h2 className='projects-header'id="projects-container">
 
           <p className='projects-one' style={{
             transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
@@ -280,7 +267,6 @@ function App() {
           <div className='logo-button'>
             <button onClick={() => handleProjectDisplay('Budgitz')}>
               <img
-                // style={{ transform: `translateY(-${moveSections * .7}px)` }}
                 src={budgitzLogo} width="100"
                 className="logo"
                 alt="Budgits app logo" />
@@ -290,7 +276,6 @@ function App() {
           <div className='logo-button'>
             <button onClick={() => handleProjectDisplay('Spaced-Repetition')}>
               <img
-                // style={{ transform: `translateY(-${moveSections * .7}px)` }}
                 src={spacedRepLogo} width="100"
                 className="logo"
                 alt="spaced-repetition app logo" />
@@ -307,29 +292,29 @@ function App() {
         <h2>Contact Me</h2>
         <section className='contact-me-left-right'>
           <ul className='contact-me-left'>
-        <li>
-        <i className="fas contact-icon fa-phone-alt"><FontAwesomeIcon className='phone-alt icon' icon='phone-alt' /></i>
+            <li>
+              <i className="fas contact-icon fa-phone-alt"><FontAwesomeIcon className='phone-alt icon' icon='phone-alt' /></i>
         206.962.1815
         </li>
-        <li>
-        <i className="fas contact-icon fa-envelope"><FontAwesomeIcon className='envelope icon' icon='envelope' /></i>
+            <li>
+              <i className="fas contact-icon fa-envelope"><FontAwesomeIcon className='envelope icon' icon='envelope' /></i>
         ozharb@gmail.com
         </li>
-        <li><a href='https://www.linkedin.com/in/osman-harb/' rel="noreferrer" target="_blank">
-        <i className="fab contact-icon fa-linkedin"><FontAwesomeIcon icon={["fab", "linkedin"]} /></i>
+            <li><a href='https://www.linkedin.com/in/osman-harb/' rel="noreferrer" target="_blank">
+              <i className="fab contact-icon fa-linkedin"><FontAwesomeIcon icon={["fab", "linkedin"]} /></i>
         linkedin.com/osmanharb
         </a>
-        </li>
-        <li>
-          <a href='https://github.com/ozharb/' rel="noreferrer" target="_blank">
-        <i className="fab contact-icon fa-github-square"><FontAwesomeIcon icon={["fab", "github-square"]} /></i>
-        github.com/ozharb/
+            </li>
+            <li>
+              <a href='https://github.com/ozharb/' rel="noreferrer" target="_blank">
+                <i className="fab contact-icon fa-github-square"><FontAwesomeIcon icon={["fab", "github-square"]} /></i>
+        github.com/ozharb
         </a>
-        </li>
-        </ul>
-        <div className='contact-me-right'>
-          <img className = 'contact-me-img' src={contactMe} width='300' alt='cartoon winky face'/>
-        </div>
+            </li>
+          </ul>
+          <div className='contact-me-right'>
+            <img className='contact-me-img' src={contactMe} width='300' alt='cartoon winky face' />
+          </div>
         </section>
 
       </div>
@@ -343,33 +328,7 @@ function App() {
         className="Parallax__background"
         style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
       />
-      {/* <div
-        className="Parallax__background-triangles"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      /> */}
-      {/* <section className='images-background'>
-       <div
-        className="skyline sky-one"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      />
-        <div
-        className="skyline sky-two"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      />
-            <div
-        className="skyline sky-three"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      />
-            <div
-        className="skyline sky-four"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      />
-            <div
-        className="skyline sky-five"
-      style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
-      />
       
-      </section> */}
       <div className='circle-1'
         style={{ transform: `translateY(-${offsetY * 0.4}px)` }}>
       </div>
