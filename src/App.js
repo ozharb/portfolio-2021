@@ -23,7 +23,7 @@ function App() {
   const [projectDisplay, setProjectDisplay] = useState('')
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
-  const handleSections = () => window.pageYOffset >= 850 ? setOffsetYSections(window.pageYOffset - 850) : setOffsetYSections(0);
+  const handleSections = () => window.pageYOffset >= 750 ? setOffsetYSections(window.pageYOffset - 750) : setOffsetYSections(0);
   const handleScrollOpacity = () => setOpacity(window.pageYOffset);
   const handleName = () => window.pageYOffset >= 300 ? setOffsetYName(window.pageYOffset - 300) : setOffsetYName(0);
   const handleLastP = () => window.pageYOffset >= 1100 ? setOffsetYLastP(window.pageYOffset - 1100) : setOffsetYLastP(0);
@@ -50,7 +50,7 @@ function App() {
 
   const handleProjects = () => window.pageYOffset >= 1400 ? setOffsetYProjectsHeader(window.pageYOffset - 1400) : setOffsetYProjectsHeader(0)
 
-  const handleProjectsMobile = () => window.pageYOffset >= 1650 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 1650) : setOffsetYProjectsHeaderMobile(0)
+  const handleProjectsMobile = () => window.pageYOffset >= 2250 ? setOffsetYProjectsHeaderMobile(window.pageYOffset - 2250) : setOffsetYProjectsHeaderMobile(0)
 
   useEffect(() => {
     window.addEventListener("scroll", handleSections);
@@ -167,19 +167,19 @@ function App() {
 
      
         <img
-          style={{ transform: `translateY(${moveSections * .95}px)`,
+          style={{ transform: ` translateY(-${moveSections * .5}px)`,
           opacity: `${1- moveSections * .003}` }}
           src={photoMe} width="300"
           className="photo-me"
           alt="my face" />
            <div
-          style={{ transform: `translateY(${moveSections * .95}px)`,
-          opacity: `${1- moveSections * .001}`}}
+          style={{ transform: `translateY(-${isMobile? moveSections * .02 : moveSections * .5}px)`,
+          opacity: `${(1- moveSections * .001)}`}}
         width="300"
           className="creative-circle-red"
       />
          <div
-          style={{ transform: `translateY(${moveSections * .95}px)`}}
+          style={{ transform: `translateY(-${isMobile? moveSections * .02 : moveSections * .3}px)`}}
         width="300"
           className="creative-circle-blue"
       />
@@ -187,7 +187,7 @@ function App() {
          
         <article className='about-me-content-headers'>
 
-          <div className='b3-left-right'>
+          {/* <div className='b3-left-right'>
             <div className='b3-left'
               style={{
                 transform: `translateX(-${moveSections * .4}px)`,
@@ -202,10 +202,10 @@ function App() {
               }}>
               <p>Developer</p>
             </div>
-          </div>
+          </div> */}
           <section
             className='about-me-content'
-            style={{ transform: `translateY(-${moveSections * .2}px)` }}
+            style={{ transform: `translateY(${moveSections * .15}px)` }}
           >
             <p>
               Born and raised in Seattle...
@@ -217,7 +217,7 @@ function App() {
             <p>The years I spent learning about software peeked my interst in learning code and building my own projects.</p>
             <p>Getting a Software Enginnering certificate at Thinkful verified my ability in, and passion for, coding and developing software that helps people and makes the world better.</p>
             <p
-              style={{ transform: `translateY(${moveLastP * .15}px)` }}
+              style={{ transform: `translateY(${isMobile? moveLastP * .05 : moveLastP * .25}px)` }}
             >Don't hesitate to reach out so we can get to work. I can't wait to team up with people and build some cool stuff.</p>
           </section>
         </article>
