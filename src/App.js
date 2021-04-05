@@ -214,7 +214,7 @@ function App() {
          
             <div className='mobile-photo-books' />
        
-            <p>Getting a Software Engineering certificate at Thinkful not only gave me the skills I need to be a strong developer but also solidified my passion in building great software for people.</p>
+            <p>Getting a Software Engineering certificate at Thinkful not only gave me the skills I need to be a strong developer but also solidified my passion for building great software for people.</p>
             <p>I'm excited about continuing my journey in the field of software and web development and boldly going where I've never gone before.</p>
             <p className= 'last-para'
               style={{ transform: `translateY(${isMobile ? moveLastP * .05 : moveLastP * .15}px)` }}
