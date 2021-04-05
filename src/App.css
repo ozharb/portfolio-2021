@@ -712,6 +712,10 @@ line-height: 27px;
   .contact-me-right{
   text-align: center;
   }
+  .contact-me-img{
+    margin-top: auto;;
+    margin-left: auto;
+    }
 
 }
 
