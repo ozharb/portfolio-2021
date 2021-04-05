@@ -26,7 +26,7 @@ function SpacedRep() {
          <article tabIndex='0' className="app-one-flip">
                         <div className="app-one-inner">
                             <div className="app-one-front">
-                                <h2 >SpacedRep</h2>
+                                <h2 >Spaced-Repetition</h2>
                             </div>
                             <div className="app-one-back">
                                 <p>Named after the learning technique</p>
@@ -64,7 +64,7 @@ function SpacedRep() {
                             <article className="app-one app-links-container">
                                 <h4>LINKS</h4>
                                 <div className='logo-links'>
-                                <div className='logo-link'>
+                                <div className='logo-link'>              
                                 <a href='https://github.com/ozharb/spaced-repetition' rel="noreferrer" target="_blank">
                                     <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                     <br />

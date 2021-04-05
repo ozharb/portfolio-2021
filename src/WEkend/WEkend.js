@@ -97,7 +97,7 @@ live app</a>
                     <article className="app-one">
                         <h2>Tech</h2>
                         <div className='app-left-right'>
-                            <div className='app-left'>
+                            <div className='app-left front-end-list'>
                                 <ul>Front End</ul>
                                 <li>Reactjs</li>
                                 <li>HTML5</li>
