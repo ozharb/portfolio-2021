@@ -617,6 +617,8 @@ margin: auto;
 padding: 20px;
 position: relative;
 bottom: 240px;
+line-height: 1.4em;
+text-align: center;
 }
 .mobile-photo-mission-control{
 
@@ -635,6 +637,7 @@ bottom: 240px;
 .mobile-photo-mission-control>p{
 padding: 47px;
 line-height: 27px;
+
 }
   .creative-circle-red{
   background-size: 153px;
