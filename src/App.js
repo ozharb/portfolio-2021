@@ -19,7 +19,6 @@ function App() {
   const [moveLastP, setOffsetYLastP] = useState(0);
   const [moveProjectsHeader, setOffsetYProjectsHeader] = useState(0);
   const [moveProjectsHeaderMobile, setOffsetYProjectsHeaderMobile] = useState(0);
-  const [projectDisplay, setProjectDisplay] = useState('')
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
   const handleSections = () => window.pageYOffset >= 900 ? setOffsetYSections(window.pageYOffset - 900) : setOffsetYSections(0);
@@ -28,11 +27,6 @@ function App() {
   const handleLastP = () => window.pageYOffset >= 1100 ? setOffsetYLastP(window.pageYOffset - 1100) : setOffsetYLastP(0);
 
 
-
-  const handleProjectDisplay = (project) => {
-    setProjectDisplay(project)
-
-  }
   const useMediaQuery = (query) => {
     const mediaMatch = window.matchMedia(query);
     const [matches, setMatches] = useState(mediaMatch.matches);
@@ -91,9 +85,12 @@ function App() {
   }, []);
 
   //Nav Bar//
-  const aboutMe = React.createRef()
-  const projects = React.createRef()
-  const contact = React.createRef()
+  const aboutMe = React.createRef();
+  const projects = React.createRef();
+  const contact = React.createRef();
+  const budgitz = React.createRef();
+  const spacedrep = React.createRef();
+  const wekend = React.createRef();
 
   const scrollToAboutMe = () => {
     aboutMe.current.scrollIntoView({
@@ -113,17 +110,25 @@ function App() {
       block: 'center'
     })
   }
-  const displayProject = () => {
-    if (projectDisplay === 'Budgitz') {
-      return <Budgitz />
-    } else if (projectDisplay === 'Spaced-Repetition') {
-      return <SpacedRep />
-    } else if (projectDisplay === 'Wekend') {
-      return <WEkend />
-    } else {
-      return <p className='pick-project'>Choose a project to learn more.</p>
-    }
+  const scrollToBudgitz = () => {
+    budgitz.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
   }
+  const scrollToWekend = () => {
+    wekend.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+  const scrollToSpacedRep = () => {
+    spacedrep.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
 
   const renderContent = () => (
     <>
@@ -196,15 +201,34 @@ function App() {
             className='about-me-content'
             style={{ transform: `translateY(${moveSections * .15}px)` }}
           >
+            <div className='photo-container'>
+               <img
+            src={photoMe} width="300"
+            className="mobile-photo-me"
+            alt="my face" />
+            </div>
             <p> Born and raised in Seattle... </p>
             <p>I studied biology and art at Seattle University then jumped into the world of immigration law to help families like mine make a home here.</p>
             <p>As a paralegal, I got to help Software Engineers and other professionals in the tech industry get their green cards giving me a unique perspective on the technology and talent it takes to create great software.</p>
             <p>The years I spent learning about software peeked my interest in learning how to code and build my own projects.</p>
-            <p>Getting a Software Enginnering certificate at Thinkful not only gave me the skills I need to be a strong developer but also solidified my passion in building great software for people.</p>
+         
+            <div className='mobile-photo-books' />
+       
+            <p>Getting a Software Engineering certificate at Thinkful not only gave me the skills I need to be a strong developer but also solidified my passion in building great software for people.</p>
             <p>I'm excited about continuing my journey in the field of software and web development and boldly going where I've never gone before.</p>
-            <p
+            <p className= 'last-para'
               style={{ transform: `translateY(${isMobile ? moveLastP * .05 : moveLastP * .15}px)` }}
             >Don't hesitate to reach out so we can get to work. I can't wait to team up with people and build some cool stuff.</p>
+            <div className='last-para-mobile'
+             style={{ transform: `translateY(${isMobile ? moveLastP * .05 : moveLastP * .15}px)` }}>
+              <div className='mobile-photo-mission-control'
+               style={{  opacity: `${( -2.7 + moveSections * .002)}`
+             }}
+               />
+                <p>
+                Don't hesitate to reach out so we can get to work. I can't wait to team up with people and build some cool stuff.
+                </p>
+                </div>
           </section>
         </article>
       </div>
@@ -213,7 +237,7 @@ function App() {
         <h2 className='projects-header'id="projects-container">
 
           <p className='projects-one' style={{
-            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+            transform: `translateY(10px) translateX(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
          translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`,
           }}>P</p>
 
@@ -223,7 +247,7 @@ function App() {
           }}>r</p>
 
           <p className='projects-three' style={{
-            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+            transform: `translateY(10px) translateX(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
           }}>o</p>
 
@@ -233,7 +257,7 @@ function App() {
           }}>j</p>
 
           <p className='projects-five' style={{
-            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+            transform: `translateY(10px) translateX(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
           }} >e</p>
 
@@ -243,28 +267,19 @@ function App() {
           }}>c</p>
 
           <p className='projects-seven' style={{
-            transform: `translateY(10px) translateX(5px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+            transform: `translateY(10px) translateX(10px) translateY(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
         translateX(-${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
           }}>t</p>
 
           <p className='projects-eight' style={{
-            transform: `translateY(-10px) translateX(-5px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
+            transform: `translateY(-10px) translateX(-10px) translateY(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)
          translateX(${isMobile ? moveProjectsHeaderMobile * 0.03 : moveProjectsHeader * 0.03}px)`
           }} >s</p>
 
         </h2>
         <div className='logos'>
           <div className='logo-button'>
-            <button onClick={() => handleProjectDisplay('Wekend')}>
-              <img
-                src={wekendLogo} width="100"
-                className="logo"
-                alt="wekend app logo" />
-            </button>
-            <label>WEkend</label>
-          </div>
-          <div className='logo-button'>
-            <button onClick={() => handleProjectDisplay('Budgitz')}>
+          <button onClick={() => scrollToBudgitz()}>
               <img
                 src={budgitzLogo} width="100"
                 className="logo"
@@ -273,17 +288,37 @@ function App() {
             <label>Budgitz</label>
           </div>
           <div className='logo-button'>
-            <button onClick={() => handleProjectDisplay('Spaced-Repetition')}>
+          <button onClick={() => scrollToSpacedRep()}>
               <img
                 src={spacedRepLogo} width="100"
                 className="logo"
                 alt="spaced-repetition app logo" />
             </button>
-            <label>Spaced-Repetition</label>
+            <label>Spaced-<br/>Repetition</label>
+          </div>
+          <div className='logo-button'>
+          <button onClick={() => scrollToWekend()}>
+              <img
+                src={wekendLogo} width="100"
+                className="logo"
+                alt="wekend app logo" />
+            </button>
+            <label>WEkend</label>
           </div>
         </div>
         <article className='project-content-window'>
-          {displayProject()}
+     
+          <section className='budgitz' ref={budgitz}>
+   <Budgitz />
+          </section>
+          <section className='spaced-rep' ref={spacedrep}>
+                  <SpacedRep />
+          </section>
+    
+          <section className='wekend' ref={wekend}>
+                 <WEkend /> 
+          </section>
+    
         </article>
 
       </div>
