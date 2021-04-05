@@ -142,14 +142,16 @@ live app</a>
                         <div className='slideshow-button'>
                             <button onClick={() => setScreenshot(screenshot > 0 ? screenshot - 1 : screenshots.length - 1)}>
                                 <i className="fa chevron-circle-left"><FontAwesomeIcon icon={["fa", "chevron-circle-left"]} /></i>
+                                back
                             </button>
-                            <label>back</label>
+
                         </div>
                         <div className='slideshow-button'>
                             <button onClick={() => setScreenshot(screenshot < screenshots.length - 1 ? screenshot + 1 : 0)}>
                                 <i className="fa chevron-circle-right"><FontAwesomeIcon icon={["fa", "chevron-circle-right"]} /></i>
+                                next
                             </button>
-                            <label>next</label>
+
                         </div>
                     </div>
 

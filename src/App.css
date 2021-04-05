@@ -362,8 +362,12 @@ display: flex;
 justify-content: space-around;
 }
 .slideshow-button {
+  font-family: 'Krona One', sans-serif;
 display: flex;
 flex-direction: column;
+}
+.slideshow-button>button{
+  font-family: 'Krona One', sans-serif;
 }
 i.fa.chevron-circle-right,i.fa.chevron-circle-left{
 font-size: 40px;
