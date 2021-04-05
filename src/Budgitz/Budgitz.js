@@ -108,7 +108,7 @@ function Budgitz() {
                                 <li>Testing with Jest</li>
                                 <li>Deployed via Vercel</li>
                             </div>
-                            <div className='app-right'>
+                            <div className='app-right back-end-list'>
                                 <ul>Back End</ul>
                                 <li>Node and Express</li>
                                 <ul>

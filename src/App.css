@@ -515,6 +515,9 @@ h3{
 .front-end-list{
   line-height: 1.4em;
 }
+.back-end-list{
+  margin-left: 11px;
+}
 
 .contact{
 margin-top: 100px;
@@ -686,6 +689,9 @@ line-height: 27px;
   button{
   width: 120px;
   }
+  .back-end-list{
+    margin-left: auto;
+  }
   .logo{
   width: 80px;
   position: relative;
@@ -723,6 +729,7 @@ line-height: 27px;
     margin-top: auto;;
     margin-left: auto;
     }
+    
 
 }
 
