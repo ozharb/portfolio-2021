@@ -283,7 +283,7 @@ function App() {
               <img
                 src={budgitzLogo} width="100"
                 className="logo"
-                alt="Budgits app logo" />
+                alt="Budgitz app logo" />
             </button>
             <label>Budgitz</label>
           </div>

@@ -88,7 +88,7 @@ function SpacedRep() {
                     <h2>Project Highlights</h2>
                         <p>This project was started with an existing codebase for the front and backend along with tests not yet passing.</p>
                         <p>The spaced-repetition learning technique is implemented using an algorithm and a linked list data structure.</p>
-                        <p>The algorithm orders words with more incorrect guesses ahead of words with less incorrect answers. This forces the user to practice words they are struggling more often than other words.</p>
+                        <p>The algorithm orders words with more incorrect guesses ahead of words with fewer incorrect answers. This forces the user to practice words they are struggling with more often than other words.</p>
                         <p>In addition to using an algorithm to implement the learning technique, the app also uses a linked list to store and order the data.</p>
                         <p>Correct guesses force words to get pushed back in the linked list further than words with incorrect guesses.</p>
                         <p>I enjoyed working with a linked list for this project which I found to be perfect for this type of data.</p>

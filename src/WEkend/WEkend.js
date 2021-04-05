@@ -91,7 +91,7 @@ live app</a>
                     <article className="app-one">
                         <h2> Inspiration</h2>
                         <p>I miss my friends. I think we all do. The pandemic kept us away from friends and reminded us that weekends aren't the same without them.</p>
-                    <p>I wanted to create an app that makes planning weekends with friends easy to help us makes the most of the little time we get to spend with them.</p>
+                    <p>I wanted to create an app that makes planning weekends with friends easy to help us make the most of the little time we get to spend with them.</p>
                     <p>Instead of having to ask what each person is up to, what if you just knew? That's the question that got me building this project.</p>
                     </article>
                     <article className="app-one">
