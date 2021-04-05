@@ -43,20 +43,20 @@ function WEkend() {
                             <div className='app-left-right'>
                                 <article className="app-one app-links-container">
                                     <h4>CATEGORIES</h4>
-                                    <div className='logo-links'>
-                                        <div className='logo-link'>
+                                    <div className='logo-links categories'>
+                                        <div className='logo-link categories'>
 
                                             <i className="fas fa-user"><FontAwesomeIcon className='user icon' icon='user' /></i>
                                             <br />
                                             <p className='category-label'>user-login</p>
                                         </div>
-                                        <div className='logo-link'>
+                                        <div className='logo-link categories'>
 
                                             <i className="fas calendar-alt"><FontAwesomeIcon className='calendar-alt icon' icon='calendar-alt' /></i>
                                             <br />
                                             <p className='category-label'>planning</p>
                                         </div>
-                                        <div className='logo-link'>
+                                        <div className='logo-link categories'>
 
                                             <i className="fas fa-users"><FontAwesomeIcon className='user icon' icon='users' /></i>
                                             <br />
