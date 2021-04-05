@@ -142,6 +142,7 @@ function SpacedRep() {
                             <button onClick={() => setScreenshot(screenshot > 0 ? screenshot - 1 : screenshots.length - 1)}
                             type='button'>
                                 <i className="fa chevron-circle-left"><FontAwesomeIcon icon={["fa", "chevron-circle-left"]} /></i>
+                                <br/>
                                 back
                             </button>
 
@@ -150,6 +151,7 @@ function SpacedRep() {
                             <button onClick={() => setScreenshot(screenshot < screenshots.length - 1 ? screenshot + 1 : 0)}
                             type='button'>
                                 <i className="fa chevron-circle-right"><FontAwesomeIcon icon={["fa", "chevron-circle-right"]} /></i>
+                                <br/>
                                 next
                             </button>
 
