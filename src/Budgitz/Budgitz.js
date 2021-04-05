@@ -63,7 +63,7 @@ function Budgitz() {
                                        
                                         <i className="fas dollar-sign"><FontAwesomeIcon className='dollar-sign icon' icon='dollar-sign' /></i>
                                             <br />
-                                <p className='category-label'>budgetting</p>
+                                <p className='category-label'>budgeting</p>
                                     </div>
                                 </div>
                             </article>
@@ -75,7 +75,7 @@ function Budgitz() {
                                         <a href='https://github.com/ozharb/BudGitz-client' rel="noreferrer" target="_blank">
                                             <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                             <br />
-                            github</a>
+                                            Github</a>
                                     </div>
                                     <div className='logo-link'>
                                         <a href='https://budgitz-client-ozharb.vercel.app/' rel="noreferrer" target="_blank">
@@ -113,7 +113,7 @@ function Budgitz() {
                                 <li>Node and Express</li>
                                 <ul>
                                     <li>Authentication via JWT</li>
-                                    <li>RESTful Api</li>
+                                    <li>RESTful API</li>
                                 </ul>
                                 <li>Testing:</li>
                                 <ul>

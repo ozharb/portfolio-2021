@@ -210,7 +210,7 @@ function App() {
             <p> Born and raised in Seattle... </p>
             <p>I studied biology and art at Seattle University then jumped into the world of immigration law to help families like mine make a home here.</p>
             <p>As a paralegal, I got to help Software Engineers and other professionals in the tech industry get their green cards giving me a unique perspective on the technology and talent it takes to create great software.</p>
-            <p>The years I spent learning about software peeked my interest in learning how to code and build my own projects.</p>
+            <p>The years I spent learning about software piqued my interest in learning how to code and build my own projects.</p>
          
             <div className='mobile-photo-books' />
        

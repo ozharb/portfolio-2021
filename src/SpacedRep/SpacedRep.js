@@ -68,7 +68,7 @@ function SpacedRep() {
                                 <a href='https://github.com/ozharb/spaced-repetition' rel="noreferrer" target="_blank">
                                     <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                     <br />
-                                github</a>
+                                    Github</a>
                             </div>
                             <div className='logo-link'>
                                 <a href='https://spaced-repetition-ozharb.vercel.app/' rel="noreferrer" target="_blank">
@@ -109,7 +109,7 @@ function SpacedRep() {
                         <li>Node and Express</li>
                         <ul>
                             <li>Authentication via JWT</li>
-                            <li>RESTful Api</li>
+                            <li>RESTful API</li>
                         </ul>
                         <li>Testing:</li>
                         <ul>
@@ -139,14 +139,17 @@ function SpacedRep() {
                     </section>
                     <div className='slideshow-buttons-container'>
                         <div className='slideshow-button'>
-                            <button onClick={() => setScreenshot(screenshot > 0 ? screenshot - 1 : screenshots.length - 1)}>
+                            <button onClick={() => setScreenshot(screenshot > 0 ? screenshot - 1 : screenshots.length - 1)}
+                            ariaLabel='back'>
                                 <i className="fa chevron-circle-left"><FontAwesomeIcon icon={["fa", "chevron-circle-left"]} /></i>
                             </button>
                             <label>back</label>
                         </div>
                         <div className='slideshow-button'>
-                            <button onClick={() => setScreenshot(screenshot < screenshots.length - 1 ? screenshot + 1 : 0)}>
+                            <button onClick={() => setScreenshot(screenshot < screenshots.length - 1 ? screenshot + 1 : 0)}
+                            ariaLabel='next'>
                                 <i className="fa chevron-circle-right"><FontAwesomeIcon icon={["fa", "chevron-circle-right"]} /></i>
+                                
                             </button>
                             <label>next</label>
                         </div>

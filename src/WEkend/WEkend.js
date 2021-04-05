@@ -72,7 +72,7 @@ function WEkend() {
                             <a href='https://github.com/ozharb/Wekend-client' rel="noreferrer" target="_blank">
                                 <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                 <br />
-github</a>
+                                Github</a>
                         </div>
                         <div className='logo-link'>
                             <a href='https://wekend-client-ozharb.vercel.app/' rel="noreferrer" target="_blank">
@@ -110,7 +110,7 @@ live app</a>
                                 <li>Node and Express</li>
                                 <ul>
                                     <li>Authentication via JWT</li>
-                                    <li>RESTful Api</li>
+                                    <li>RESTful API</li>
                                 </ul>
                                 <li>Testing:</li>
                                 <ul>
