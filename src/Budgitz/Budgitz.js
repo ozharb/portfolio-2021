@@ -75,7 +75,7 @@ function Budgitz() {
                                         <a href='https://github.com/ozharb/BudGitz-client' rel="noreferrer" target="_blank">
                                             <i className="fab fa-github-alt"><FontAwesomeIcon icon={["fab", "github-alt"]} /></i>
                                             <br />
-                                            Github</a>
+                                            GitHub</a>
                                     </div>
                                     <div className='logo-link'>
                                         <a href='https://budgitz-client-ozharb.vercel.app/' rel="noreferrer" target="_blank">
