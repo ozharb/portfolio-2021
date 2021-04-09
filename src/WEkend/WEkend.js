@@ -86,7 +86,7 @@ live app</a>
                         </article>
                         <article className="app-one">
                             <h2>Description</h2>
-                            <p>A social event planning app where users can post events for friends to see as well as see and rsvp events their friends have posted.</p>
+                            <p>A social event planning app where users can post events for friends to see as well as see and rsvp to events their friends have posted.</p>
                         </article>
                         <article className="app-one">
                             <h2> Inspiration</h2>
