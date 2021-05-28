@@ -499,7 +499,7 @@ function App() {
                 <i className="fab contact-icon fa-linkedin">
                   <FontAwesomeIcon icon={["fab", "linkedin"]} />
                 </i>
-                linkedin.com/osmanharb
+                linkedin.com/ozharb
               </a>
             </li>
             <li>
