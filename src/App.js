@@ -236,8 +236,8 @@ function App() {
             <p>
               As a paralegal, I got to help Software Engineers and other
               professionals in the tech industry get their green cards giving me
-              a unique perspective on the technology and talent it takes to
-              create great software.
+              a unique perspective on the talent and skills it takes to create
+              great software.
             </p>
             <p>
               The years I spent learning about software piqued my interest in
@@ -247,9 +247,10 @@ function App() {
             <div className="mobile-photo-books" />
 
             <p>
-              Getting a Software Engineering certificate at Thinkful not only
-              gave me the skills I need to be a strong developer but also
-              solidified my passion for building great software for people.
+              I went on to complete a coding bootcamp that led to a Software
+              Engineering certificate and my current career in Cloud Services. I
+              love getting to help other developers while working on the latest
+              tech.
             </p>
             <p>
               I'm excited about continuing my journey in the field of software
