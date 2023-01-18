@@ -156,7 +156,7 @@ function Budgitz() {
                     <li>PostgreSQL</li>
                     <li>Knex.js - SQL wrapper</li>
                   </ul>
-                  <li>Deployed via Heroku</li>
+                  <li>Deployed via Render</li>
                 </div>
               </div>
             </article>
